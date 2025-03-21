@@ -76,7 +76,7 @@
 <body>
     <div class="container">
         <h2>Billing Details</h2>
-        <form>
+        <form action="request.html" method="GET">
             <div class="form-group">
                 <label for="first-name">First Name</label>
                 <input type="text" id="first-name" name="first-name" required>
@@ -101,7 +101,7 @@
                 <label for="time">Select Time</label>
                 <div style="display: flex; gap: 10px;">
                     <input type="number" id="time" name="time" min="0" required>
-                    <select id="time-unit" name="time-unit" required>
+                    <select id="time-unit" name="unit" required>
                         <option value="hours">Hours</option>
                         <option value="minutes">Minutes</option>
                     </select>
@@ -111,17 +111,18 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent actual form submission
+
+            // Get values from input fields
+            const time = document.getElementById("time").value;
+            const unit = document.getElementById("time-unit").value;
+
+            // Redirect to request.html with time details in URL
+            window.location.href = `request.html?time=${time}&unit=${unit}`;
+        });
+    </script>
 </body>
-<script>
-    document.querySelector("form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent actual form submission
-
-        // Get values from input fields
-        const time = document.getElementById("time").value;
-        const unit = document.getElementById("time-unit").value;
-
-        // Redirect to Page 3 with time details in URL
-        window.location.href = "https://aayush2485.github.io/Quickbilling/request.html/details.html";
-    });
-</script>
 </html>
