@@ -12,19 +12,18 @@
             text-align: center;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 20px;
-            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
         }
         .animated-text {
-            margin-bottom: 30px; /* Added gap between text and QR code container */
+            margin-bottom: 30px;
         }
         #qrcode-container {
             opacity: 0;
@@ -38,6 +37,7 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 20px; /* Added space between text and QR code */
         }
         #qrcode {
             padding: 20px;
@@ -122,7 +122,7 @@
         setTimeout(function() {
             document.getElementById("qrcode-container").style.opacity = "1";
             document.getElementById("qrcode-container").style.transform = "translateY(0)";
-        }, 3500); // Adjusted delay to sync with text animation
+        }, 3500);
     </script>
 </body>
 </html>
